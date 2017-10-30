@@ -572,9 +572,9 @@ Due to limitation of dispatch queues and the way EarlGrey synchronizes with them
 statements from a `dispatch_queue` leads to a livelock. To mitigate this, we've introduced new block-based
 APIs that wrap EarlGrey statements, and that can be safely called from non-main threads:
 
-  * `grey_execute_sync(void (^block)())` — Synchronous. Blocks until execution is
+  * `grey_execute_sync(void (^block)(void))` — Synchronous. Blocks until execution is
 complete.
-  * `grey_execute_async(void (^block)())` — Asynchronous.
+  * `grey_execute_async(void (^block)(void))` — Asynchronous.
 
 ## Other Top Level APIs
 

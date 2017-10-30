@@ -128,7 +128,7 @@ static inline void resetFailureHandler() {
 }
 
 // Gets the failure handler. Must be called from main thread otherwise behavior is undefined.
-inline id<GREYFailureHandler> grey_getFailureHandler() {
+inline id<GREYFailureHandler> grey_getFailureHandler(void) {
   assert([NSThread isMainThread]);
   NSMutableDictionary *TLSDict = [[NSThread mainThread] threadDictionary];
   return [TLSDict valueForKey:kGREYFailureHandlerKey];
